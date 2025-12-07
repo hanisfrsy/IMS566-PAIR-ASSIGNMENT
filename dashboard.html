@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Page</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+  <!-- External CSS & JS -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+</head>
+
+<body data-bs-theme="light" class="d-flex flex-column min-vh-100">
+
+  <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg" data-bs-theme="light">
+    <img src="image/logo4.png" alt="Logo" class="ms-4">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="bi bi-house-door-fill"></i> DASHBOARD</a></li>
+          <li class="nav-item"><a class="nav-link" href="tasks.html"><i class="bi bi-calendar2-event-fill"></i> TASKS</a></li>
+          <li class="nav-item"><a class="nav-link active" href="users.html"><i class="bi bi-person-circle"></i> USERS</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle-fill"></i> ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-box-arrow-right"></i> LOGOUT</a></li>
+        </ul>
+
+        <div class="d-flex">
+          <button class="btn btn-outline-secondary" id="darkModeToggle" title="Toggle Dark Mode">
+            <i class="bi bi-moon-stars-fill" id="darkModeIcon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+
+  <!-- Main Content -->
+  <main class="mx-auto px-md-4 py-4" style="max-width: 2000px;">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold mb-0">Welcome Back, Zara!</h3>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:150px;">
+        <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+      </form>
+    </div>
+
+    <hr class="my-3" style="border: 0; height: 2px; background-color: #4e73df; opacity: 0.6;">
+
+    <!-- Cards -->
+    <div class="row g-4 mb-4">
+      <div class="col-md-8">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card shadow-sm h-100 card-pastel-blue">
+              <div class="card-body">
+                <h6 class style="color: black;">Total Tasks</h6>
+                <h3 class ="fw-semibold" style="color:black">11</h3>
+                <span class="badge bg-info d-inline-block text-center" style="width:150px;">
+                  <i class="bi bi-card-list" style="color: white;"></i> All tasks created
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm h-100 card-pastel-green">
+              <div class="card-body">
+                <h6 class style="color: black;">Tasks Completed</h6>
+                <h3 class="fw-semibold" style="color:black">4</h3>
+                <span class="badge bg-success d-inline-block text-center" style="width:150px;">
+                  <i class="bi bi-card-checklist" style="color: white;"></i> Completed
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm h-100 card-pastel-purple">
+              <div class="card-body">
+                <h6 class style="color: black;">In Progress Tasks</h6>
+                <h3 class="fw-semibold" style="color:black">3</h3>
+                <span class="badge bg-primary d-inline-block text-center" style="width:150px;">
+                  <i class="bi bi-hourglass-split" style="color: white;"></i> Currently Ongoing
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2 cards -->
+        <div class="row g-4 mt-3">
+          <div class="col-md-4">
+            <div class="card shadow-sm h-100 card-pastel-yellow">
+              <div class="card-body">
+                <h6 class style="color: black;">Upcoming Deadlines</h6>
+                <h3 class="fw-semibold" style="color:black">2</h3>
+                <span class="badge bg-warning d-inline-block text-center" style="width:150px;">
+                  <i class="bi bi-megaphone-fill" style="color: white;"></i> Need Attention
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm h-100 card-pastel-pink">
+              <div class="card-body">
+                <h6 class style="color: black;">Tasks Overdue</h6>
+                <h3 class="fw-semibold" style="color:black">1</h3>
+                <span class="badge bg-danger d-inline-block text-center" style="width:150px;">
+                  <i class="bi bi-exclamation-triangle-fill" style="color: white;"></i> Deadline Missed
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm h-100 card-pastel-grey">
+              <div class="card-body">
+                <h6 class style="color: black;">New Tasks</h6>
+                <h3 class="fw-semibold" style="color:black">1</h3>
+                <span class="badge bg-secondary d-inline-block text-center" style="width:150px;">
+                  <i class="bi bi-plus-square-fill" style="color: white;"></i> Not Started Yet
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart -->
+      <div class="col-md-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h6 class="text-muted mb-3">Tasks Distribution</h6>
+            <canvas id="myChart" style="width:100%;max-width:100%;height:280px"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Tasks Table -->
+    <div class="col-md-12">
+      <h3 class="mb-3 fw-semibold">Recent Tasks</h3>
+      <div class="table-responsive">
+        <table class="table table-striped align-middle table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>No.</th>
+              <th class="text-start">Task</th>
+              <th class="text-center">Priority</th>
+              <th class="text-center">Status</th>
+              <th class="text-center">Due Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>TAC Roleplay Script </td>
+              <td class="text-center">High</td>
+              <td class="text-center"><span class="badge bg-primary" style="width:95px;">In Progress</span></td>
+              <td class="text-center">30-12-2025</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>CTU Article Review</td>
+              <td class="text-center">Medium</td>
+              <td class="text-center"><span class="badge bg-success" style="width:95px;">Completed</span></td>
+              <td class="text-center">15-12-2025</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>LCC Slide Presentation</td>
+              <td class="text-center">Low</td>
+              <td class="text-center"><span class="badge bg-warning" style="width:95px;">Pending</span></td>
+              <td class="text-center">9-12-2025</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>IMS565 Article Review</td>
+              <td class="text-center">Medium</td>
+              <td class="text-center"><span class="badge bg-danger" style="width:95px;">Overdue</span></td>
+              <td class="text-center">1-12-2025</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>IMS560 Task</td>
+              <td class="text-center">High</td>
+              <td class="text-center"><span class="badge bg-success" style="width:95px;">Completed</span></td>
+              <td class="text-center">3-12-2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <!-- ChartJS -->
+  <script>
+    var xValues = ["Completed", "In Progress", "Pending", "Overdue", "New"];
+    var yValues = [4, 3, 2, 1, 1];
+    var barColors = ["#1e7145","#2b5797","#ffd801","#b91d47","#656565"];
+
+    new Chart("myChart", {
+      type: "doughnut",
+      data: {
+        labels: xValues,
+        datasets: [{
+          backgroundColor: barColors,
+          data: yValues
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom' },
+          title: {
+            display: true,
+            text: "Task Status Distribution"
+          }
+        }
+      }
+    });
+  </script>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <!-- Footer -->
+    <footer class="footer mt-auto">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+      </div>
+      <div class="text-end">
+    <p class="copyright mb-0 text-black-footer">&copy; 2025 TASKIFY. All rights reserved.</p>
+    <p class="mb-0 text-black-footer">Created by <strong>Qistina & Farisya</strong></p>
+</div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

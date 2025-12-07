@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TASKIFY - Users</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+   <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+
+  <!-- External CSS & JS -->
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+
+</head>
+
+<body data-bs-theme="light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg" data-bs-theme="light">
+    <img src="image/logo4.png" alt="Logo" class="ms-4">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="dashboard.html"><i class="bi bi-house-door-fill"></i> DASHBOARD</a></li>
+          <li class="nav-item"><a class="nav-link" href="tasks.html"><i class="bi bi-calendar2-event-fill"></i> TASKS</a></li>
+          <li class="nav-item"><a class="nav-link active" href="users.html"><i class="bi bi-person-circle"></i> USERS</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle-fill"></i> ABOUT</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-box-arrow-right"></i> LOGOUT</a></li>
+        </ul>
+
+        <div class="d-flex">
+          <button class="btn btn-outline-secondary" id="darkModeToggle" title="Toggle Dark Mode">
+            <i class="bi bi-moon-stars-fill" id="darkModeIcon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Users Table -->
+  <div class="container mt-5">
+    <h2 class="fw-bold mb-4 text-center">Users List</h2>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead class="table-light">
+        <tr class="text-center">
+          <th>No.</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Class</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody class="text-center">
+          <tr>
+            <td>1</td>
+            <td>Alia Zara Binti Arifin</td>
+            <td>alia@student.uitm.edu.my</td>
+            <td>CDIM2623E</td>
+            <td><span class="badge bg-success">Active</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Siti Nurhaliza Binti Ismail</td>
+            <td>siti@student.uitm.edu.my</td>
+            <td>CDIM2623A</td>
+            <td><span class="badge bg-danger">Inactive</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Faiz Iqbal Bin Roslan</td>
+            <td>faiz@student.uitm.edu.my</td>
+            <td>CDIM2623D</td>
+            <td><span class="badge bg-success">Active</span></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Nur Aisyah Binti Abdul Razak</td>
+            <td>aisyaa@student.uitm.edu.my</td>
+            <td>CDIM2623B</td>
+            <td><span class="badge bg-danger">Inactive</span></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Muhammad Ikhwan Bin Zahari</td>
+            <td>ikhwan@student.uitm.edu.my</td>
+            <td>CDIM2623A</td>
+            <td><span class="badge bg-success">Active</span></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Nafis Shahrul Bin Kamal</td>
+            <td>nafis@student.uitm.edu.my</td>
+            <td>CDIM2623C</td>
+            <td><span class="badge bg-danger">Inactive</span></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Uqasha A/P Gopal</td>
+            <td>uqa@student.uitm.edu.my</td>
+            <td>CDIM2623C</td>
+            <td><span class="badge bg-danger">Inactive</span></td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Lily Qadeja Binti Adli Rahim</td>
+            <td>lily@student.uitm.edu.my</td>
+            <td>CDIM2623A</td>
+            <td><span class="badge bg-success">Active</span></td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Muhammad Arash Bin Abdul Halim</td>
+            <td>arash@student.uitm.edu.my</td>
+            <td>CDIM2623C</td>
+            <td><span class="badge bg-success">Active</span></td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Afify Farahien Binti Soekarno</td>
+            <td>afify@student.uitm.edu.my</td>
+            <td>CDIM2623D</td>
+            <td><span class="badge bg-success">Active</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Charts Side by Side -->
+    <div class="row mt-5">
+      <!-- Vertical Bar Chart -->
+      <div class="col-lg-6 col-md-12 mb-4">
+        <canvas id="myChart"></canvas>
+      </div>
+      <!-- Horizontal Bar Chart -->
+      <div class="col-lg-6 col-md-12 mb-4">
+        <canvas id="classUsageChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer mt-auto">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center">
+      <div class="social-icons">
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <a href="#"><i class="bi bi-instagram"></i></a>
+        <a href="#"><i class="bi bi-twitter-x"></i></a>
+        <a href="#"><i class="bi bi-youtube"></i></a>
+      </div>
+      <div class="text-end">
+    <p class="copyright mb-0 text-black-footer">&copy; 2025 TASKIFY. All rights reserved.</p>
+    <p class="mb-0 text-black-footer">Created by <strong>Qistina & Farisya</strong></p>
+</div>
+
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ChartJS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+
+  <!-- ChartJS Scripts -->
+  <script>
+  function getChartTextColor() {
+    const theme = document.body.getAttribute("data-bs-theme") || "light";
+    return theme === "dark" ? "#ffffff" : "#000000";
+  }
+
+  const myChartCtx = document.getElementById('myChart');
+  const myChart = new Chart(myChartCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Active Users', 'Inactive Users'],
+      datasets: [{
+        label: '',
+        data: [6, 4],
+        backgroundColor: ['#3478de', '#57aaef'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Number of Active Users',
+          color: getChartTextColor(),
+          font: { size: 16 }
+        }
+      },
+      scales: {
+        x: { ticks: { color: getChartTextColor() } },
+        y: { 
+          beginAtZero: true,
+          ticks: { color: getChartTextColor() }
+        }
+      }
+    }
+  });
+
+  const classChartCtx = document.getElementById('classUsageChart');
+  const classChart = new Chart(classChartCtx, {
+    type: 'bar',
+    data: {
+      labels: ['CDIM2623A', 'CDIM2623B', 'CDIM2623C', 'CDIM2623D', 'CDIM2623E'],
+      datasets: [{
+        label: '',
+        data: [3, 1, 3, 2, 1],
+        backgroundColor: '#3478de',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Taskify Users from Each Class',
+          color: getChartTextColor(),
+          font: { size: 16 }
+        }
+      },
+      scales: {
+        x: { 
+          beginAtZero: true,
+          ticks: { color: getChartTextColor() }
+        },
+        y: { 
+          ticks: { 
+            color: getChartTextColor(),
+            autoSkip: false 
+          }
+        }
+      }
+    }
+  });
+
+  document.getElementById("darkModeToggle").addEventListener("click", () => {
+    setTimeout(() => {
+      const color = getChartTextColor();
+
+      myChart.options.plugins.title.color = color;
+      myChart.options.scales.x.ticks.color = color;
+      myChart.options.scales.y.ticks.color = color;
+      myChart.update();
+
+      classChart.options.plugins.title.color = color;
+      classChart.options.scales.x.ticks.color = color;
+      classChart.options.scales.y.ticks.color = color;
+      classChart.update();
+    }, 100);
+  });
+</script>
+
+
+</body>
+</html>
